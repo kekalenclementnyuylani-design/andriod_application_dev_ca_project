@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#F1EFE8">
+
+    <!-- Header -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="#27500A" android:padding="20dp" android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="Live tracking"
+            android:textSize="18sp" android:textStyle="bold" android:textColor="#EAF3DE"/>
+        <Button android:id="@+id/btn_stop" android:layout_width="wrap_content"
+            android:layout_height="36dp" android:text="Stop"
+            android:textSize="13sp" android:backgroundTint="#791F1F" android:textColor="#FCEBEB"
+            android:paddingHorizontal="16dp"/>
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="20dp">
+
+            <!-- Mode card (color changes dynamically) -->
+            <androidx.cardview.widget.CardView android:id="@+id/card_mode"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" app:cardCornerRadius="16dp"
+                app:cardElevation="0dp" app:cardBackgroundColor="#27500A">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="24dp" android:gravity="center">
+                    <TextView android:id="@+id/tv_mode" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="Stationary"
+                        android:textSize="32sp" android:textStyle="bold" android:textColor="#EAF3DE"/>
+                    <TextView android:id="@+id/tv_mode_subtitle" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="No movement detected"
+                        android:textSize="13sp" android:textColor="#97C459" android:layout_marginTop="4dp"/>
+                    <TextView android:id="@+id/tv_co2_rate" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="0g CO2/km"
+                        android:textSize="12sp" android:textColor="#97C459"
+                        android:layout_marginTop="8dp" android:background="#173404"
+                        android:paddingHorizontal="10dp" android:paddingVertical="4dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Stats row -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:weightSum="2" android:layout_marginBottom="16dp">
+                <androidx.cardview.widget.CardView android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    android:layout_marginEnd="8dp" app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp" app:cardBackgroundColor="#FFFFFF">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="14dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Speed" android:textSize="11sp" android:textColor="#888780"/>
+                        <TextView android:id="@+id/tv_speed" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0.0 km/h"
+                            android:textSize="20sp" android:textStyle="bold" android:textColor="#27500A"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    app:cardCornerRadius="10dp" app:cardElevation="0dp" app:cardBackgroundColor="#FFFFFF">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="14dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Distance" android:textSize="11sp" android:textColor="#888780"/>
+                        <TextView android:id="@+id/tv_distance" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0m"
+                            android:textSize="20sp" android:textStyle="bold" android:textColor="#27500A"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- CO2 row -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:weightSum="2" android:layout_marginBottom="16dp">
+                <androidx.cardview.widget.CardView android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    android:layout_marginEnd="8dp" app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp" app:cardBackgroundColor="#FFFFFF">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="14dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="CO₂ this session" android:textSize="11sp" android:textColor="#888780"/>
+                        <TextView android:id="@+id/tv_session_co2" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0.0g"
+                            android:textSize="20sp" android:textStyle="bold" android:textColor="#791F1F"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    app:cardCornerRadius="10dp" app:cardElevation="0dp" app:cardBackgroundColor="#FFFFFF">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="14dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="CO₂ saved" android:textSize="11sp" android:textColor="#888780"/>
+                        <TextView android:id="@+id/tv_saved" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0.0g saved"
+                            android:textSize="18sp" android:textStyle="bold" android:textColor="#27500A"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Accelerometer bar -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" app:cardCornerRadius="10dp"
+                app:cardElevation="0dp" app:cardBackgroundColor="#FFFFFF">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Accelerometer intensity" android:textSize="11sp"
+                        android:textColor="#888780" android:layout_marginBottom="8dp"/>
+                    <ProgressBar android:id="@+id/progress_accel"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent" android:layout_height="10dp"
+                        android:max="100" android:progress="0"
+                        android:progressTint="#1D9E75" android:progressBackgroundTint="#9FE1CB"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
