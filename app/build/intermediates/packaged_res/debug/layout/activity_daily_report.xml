@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#F1EFE8">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="#27500A" android:padding="24dp" android:orientation="vertical"
+            android:gravity="center">
+            <TextView android:id="@+id/tv_report_title" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daily report" android:textSize="14sp" android:textColor="#97C459"/>
+            <TextView android:id="@+id/tv_total_co2" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="0.00 kg CO₂"
+                android:textSize="40sp" android:textStyle="bold" android:textColor="#EAF3DE"
+                android:layout_marginTop="4dp"/>
+            <TextView android:id="@+id/tv_saved" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="0.00 kg saved"
+                android:textSize="14sp" android:textColor="#5DCAA5" android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="20dp">
+
+            <TextView android:id="@+id/tv_feedback" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="Calculating performance..."
+                android:textSize="16sp" android:textStyle="bold" android:textColor="#27500A"
+                android:gravity="center" android:layout_marginBottom="12dp"
+                android:visibility="gone"/>
+
+            <TextView android:id="@+id/tv_equivalent" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="Like charging your phone 10 times"
+                android:textSize="14sp" android:textColor="#5F5E5A" android:gravity="center"
+                android:background="#EAF3DE" android:padding="12dp"
+                android:layout_marginBottom="20dp"/>
+
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp" app:cardElevation="0dp" app:cardBackgroundColor="#FFFFFF">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:paddingVertical="8dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Walking" android:textSize="14sp"
+                            android:textColor="#888780"/>
+                        <TextView android:id="@+id/tv_walking" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0.0 km"
+                            android:textSize="14sp" android:textStyle="bold" android:textColor="#27500A"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="0.5dp" android:background="#D3D1C7"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:paddingVertical="8dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Running" android:textSize="14sp"
+                            android:textColor="#888780"/>
+                        <TextView android:id="@+id/tv_running" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0.0 km"
+                            android:textSize="14sp" android:textStyle="bold" android:textColor="#27500A"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="0.5dp" android:background="#D3D1C7"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:paddingVertical="8dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Vehicle" android:textSize="14sp"
+                            android:textColor="#888780"/>
+                        <TextView android:id="@+id/tv_vehicle" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0.0 km"
+                            android:textSize="14sp" android:textStyle="bold" android:textColor="#791F1F"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button android:id="@+id/btn_close" android:layout_width="match_parent"
+                android:layout_height="52dp" android:text="Close"
+                android:textSize="14sp" android:backgroundTint="#27500A" android:textColor="#EAF3DE"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
